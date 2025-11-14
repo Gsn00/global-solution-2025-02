@@ -1,5 +1,6 @@
 import Header from "./components/header";
 import RecommendedSkills from "./components/RecommendedSkills";
+import UserList from "./components/userlist";
 
 function App() {
   function toggleTheme() {
@@ -16,6 +17,7 @@ function App() {
       <Header toggleTheme={toggleTheme} />
       <section className="px-55 w-full min-h-screen flex flex-col gap-8 py-8">
         <RecommendedSkills />
+        <UserList />
       </section>
     </section>
   );
