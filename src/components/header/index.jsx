@@ -4,7 +4,7 @@ import ProfilePic from "../ProfilePic";
 
 export default function Header({ toggleTheme }) {
   return (
-    <header className="w-full px-8 py-4 flex items-center justify-between border-b border-solid border-border-light bg-background-light/80 backdrop-blur-sm dark:border-border-dark dark:bg-background-dark/80">
+    <header className="sticky top-0 left-0 z-10 w-full px-8 py-4 flex items-center justify-between border-b border-solid border-border-light bg-background-light/80 backdrop-blur-sm dark:border-border-dark dark:bg-background-dark/80">
       <div className="flex items-center gap-5">
         <h1 className="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight tracking-[-0.015em] select-none">
           THE FUTURE
