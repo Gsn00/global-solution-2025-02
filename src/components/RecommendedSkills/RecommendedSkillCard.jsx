@@ -10,7 +10,7 @@ export default function RecommendedSkillCard({ title, text }) {
       <p className="text-text-light-secondary dark:text-text-dark-secondary">
         {text}
       </p>
-      <button className="flex gap-3 cursor-pointer text-blue mt-auto">
+      <button className="flex gap-3 cursor-pointer text-blue mt-auto w-fit">
         Aprender Agora <MoveRight />
       </button>
     </div>
