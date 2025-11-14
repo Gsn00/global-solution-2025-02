@@ -40,7 +40,7 @@ export default function UserList() {
 
         <Select
           icon={<TrendingUp size={15} />}
-          placeholder="Nível deExperiência"
+          placeholder="Nível de Experiência"
         >
           <option value="trainee">Trainee</option>
           <option value="junior">Júnior</option>

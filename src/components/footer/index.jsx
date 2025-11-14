@@ -1,4 +1,3 @@
-import { Code } from "lucide-react";
 import FooterButton from "./FooterButton";
 
 export default function Footer() {

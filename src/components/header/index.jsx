@@ -1,8 +1,17 @@
-import { Sun, UserRound } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import HeaderButton from "./HeaderButton";
 import ProfilePic from "../ProfilePic";
+import { useState } from "react";
 
 export default function Header({ toggleTheme }) {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  function handleToggleTheme() {
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setIsDarkMode(!isDarkMode);
+    toggleTheme();
+  }
+
   return (
     <header className="sticky top-0 left-0 z-10 w-full px-8 py-4 flex items-center justify-between border-b border-solid border-border-light bg-background-light/80 backdrop-blur-sm dark:border-border-dark dark:bg-background-dark/80">
       <div className="flex items-center gap-5">
@@ -23,9 +32,9 @@ export default function Header({ toggleTheme }) {
 
         <button
           className="cursor-pointer rounded-lg flex items-center justify-center w-9 h-9 text-text-light-primary dark:text-text-dark-primary bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark"
-          onClick={() => toggleTheme()}
+          onClick={() => handleToggleTheme()}
         >
-          <Sun size={18} />
+          {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
         </button>
         <button>
           <ProfilePic
