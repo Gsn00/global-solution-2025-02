@@ -1,7 +1,7 @@
 export default function ProfilePic({ src, alt, size = 9 }) {
   return (
     <div
-      className={`p-0.5 cursor-pointer rounded-full object-cover bg-red-300 w-[${size}px] aspect-square bg-linear-to-br from-[#13a4ec] to-[#DA00FF]`}
+      className={`p-1 cursor-pointer rounded-full object-cover bg-red-300 w-[${size}px] aspect-square bg-linear-to-br from-[#13a4ec] to-[#DA00FF]`}
     >
       <img
         onError={(e) => {

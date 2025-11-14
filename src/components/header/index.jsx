@@ -16,7 +16,7 @@ export default function Header({ toggleTheme }) {
         />
       </div>
 
-      <nav className="flex gap-5">
+      <nav className="flex gap-5 items-center">
         <HeaderButton>Inicio</HeaderButton>
         <HeaderButton>Perfil</HeaderButton>
         <HeaderButton>Notificações</HeaderButton>

@@ -1,5 +1,6 @@
 import { Brain, BriefcaseBusiness, Clock, TrendingUp } from "lucide-react";
 import Select from "../select";
+import UserCard from "./UserCard";
 
 export default function UserList() {
   return (
@@ -38,6 +39,62 @@ export default function UserList() {
           <option value="mid">Pleno</option>
           <option value="senior">Sênior</option>
         </Select>
+      </div>
+
+      <div className="grid grid-cols-4 gap-5">
+        <UserCard
+          name={"Mariana Silva"}
+          role={"Especialista em IA Ética"}
+          skills={["Machine Learning", "Ética Digital", "Python"]}
+          img={
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCbwrSfeuB5oXoho3H9OX2OAWVo5dlK3zeaYPuwPGM8_Ub9lGELvmArvFsERnpnSrd-E2yTUlfbQ4fq-g2h2vMSJAkKXpLGbXPLUdulqzT7RhKv-Wo2LE61GbcUbShcLEv9EeaxW_vpkXwzUEeVHUIp-wHzW8zs1W8FNIO3Zf4lS0eHJNHLP1MgMDLMldyn3WOPoxgj2Ujv7o_bCe4AXtqsH7F_f4waWV06PTp9zWOex5g7IZ8_9SdryXTfBiEZuiXM55ZemN0qUzPu"
+          }
+        />
+
+        <UserCard
+          name={"Mariana Silva"}
+          role={"Especialista em IA Ética"}
+          skills={["Machine Learning", "Ética Digital", "Python"]}
+          img={
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCbwrSfeuB5oXoho3H9OX2OAWVo5dlK3zeaYPuwPGM8_Ub9lGELvmArvFsERnpnSrd-E2yTUlfbQ4fq-g2h2vMSJAkKXpLGbXPLUdulqzT7RhKv-Wo2LE61GbcUbShcLEv9EeaxW_vpkXwzUEeVHUIp-wHzW8zs1W8FNIO3Zf4lS0eHJNHLP1MgMDLMldyn3WOPoxgj2Ujv7o_bCe4AXtqsH7F_f4waWV06PTp9zWOex5g7IZ8_9SdryXTfBiEZuiXM55ZemN0qUzPu"
+          }
+        />
+
+        <UserCard
+          name={"Mariana Silva"}
+          role={"Especialista em IA Ética"}
+          skills={["Machine Learning", "Ética Digital", "Python"]}
+          img={
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCbwrSfeuB5oXoho3H9OX2OAWVo5dlK3zeaYPuwPGM8_Ub9lGELvmArvFsERnpnSrd-E2yTUlfbQ4fq-g2h2vMSJAkKXpLGbXPLUdulqzT7RhKv-Wo2LE61GbcUbShcLEv9EeaxW_vpkXwzUEeVHUIp-wHzW8zs1W8FNIO3Zf4lS0eHJNHLP1MgMDLMldyn3WOPoxgj2Ujv7o_bCe4AXtqsH7F_f4waWV06PTp9zWOex5g7IZ8_9SdryXTfBiEZuiXM55ZemN0qUzPu"
+          }
+        />
+
+        <UserCard
+          name={"Mariana Silva"}
+          role={"Especialista em IA Ética"}
+          skills={["Machine Learning", "Ética Digital", "Python"]}
+          img={
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCbwrSfeuB5oXoho3H9OX2OAWVo5dlK3zeaYPuwPGM8_Ub9lGELvmArvFsERnpnSrd-E2yTUlfbQ4fq-g2h2vMSJAkKXpLGbXPLUdulqzT7RhKv-Wo2LE61GbcUbShcLEv9EeaxW_vpkXwzUEeVHUIp-wHzW8zs1W8FNIO3Zf4lS0eHJNHLP1MgMDLMldyn3WOPoxgj2Ujv7o_bCe4AXtqsH7F_f4waWV06PTp9zWOex5g7IZ8_9SdryXTfBiEZuiXM55ZemN0qUzPu"
+          }
+        />
+
+        <UserCard
+          name={"Mariana Silva"}
+          role={"Especialista em IA Ética"}
+          skills={["Machine Learning", "Ética Digital", "Python"]}
+          img={
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCbwrSfeuB5oXoho3H9OX2OAWVo5dlK3zeaYPuwPGM8_Ub9lGELvmArvFsERnpnSrd-E2yTUlfbQ4fq-g2h2vMSJAkKXpLGbXPLUdulqzT7RhKv-Wo2LE61GbcUbShcLEv9EeaxW_vpkXwzUEeVHUIp-wHzW8zs1W8FNIO3Zf4lS0eHJNHLP1MgMDLMldyn3WOPoxgj2Ujv7o_bCe4AXtqsH7F_f4waWV06PTp9zWOex5g7IZ8_9SdryXTfBiEZuiXM55ZemN0qUzPu"
+          }
+        />
+
+        <UserCard
+          name={"Mariana Silva"}
+          role={"Especialista em IA Ética"}
+          skills={["Machine Learning", "Ética Digital", "Python"]}
+          img={
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCbwrSfeuB5oXoho3H9OX2OAWVo5dlK3zeaYPuwPGM8_Ub9lGELvmArvFsERnpnSrd-E2yTUlfbQ4fq-g2h2vMSJAkKXpLGbXPLUdulqzT7RhKv-Wo2LE61GbcUbShcLEv9EeaxW_vpkXwzUEeVHUIp-wHzW8zs1W8FNIO3Zf4lS0eHJNHLP1MgMDLMldyn3WOPoxgj2Ujv7o_bCe4AXtqsH7F_f4waWV06PTp9zWOex5g7IZ8_9SdryXTfBiEZuiXM55ZemN0qUzPu"
+          }
+        />
       </div>
     </section>
   );
