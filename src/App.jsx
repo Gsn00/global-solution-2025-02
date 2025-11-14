@@ -1,3 +1,4 @@
+import Footer from "./components/footer";
 import Header from "./components/header";
 import RecommendedSkills from "./components/RecommendedSkills";
 import UserList from "./components/userlist";
@@ -19,6 +20,7 @@ function App() {
         <RecommendedSkills />
         <UserList />
       </section>
+      <Footer />
     </section>
   );
 }
