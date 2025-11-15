@@ -106,10 +106,14 @@ export default function UserList({ openModal }) {
               projects: [
                 {
                   name: "Sistema de Recomendação Ética",
+                  description:
+                    "Um sistema que recomenda conteúdos de forma ética, respeitando a privacidade dos usuários.",
                   link: "https://github.com/marianasilva/sistema-recomendacao-etica",
                 },
                 {
                   name: "Biblioteca Virtual",
+                  description:
+                    "Plataforma online para acesso a livros e materiais educacionais de forma gratuita.",
                   link: "https://github.com/marianasilva/biblioteca-virtual",
                 },
               ],

@@ -15,7 +15,7 @@ export default function CardModal({ data, closeModal }) {
   }
 
   return (
-    <div className="relative w-3/5 h-4/5 bg-bg-light dark:bg-bg-dark border border-blue/20 rounded-lg pt-6 flex flex-col items-center">
+    <div className="select-none relative w-3/5 h-4/5 bg-bg-light dark:bg-bg-dark border border-blue/20 rounded-lg pt-6 flex flex-col items-center">
       <button
         onClick={() => closeModal()}
         className="cursor-pointer text-text-light-secondary dark:text-text-dark-secondary absolute top-3 right-3"
@@ -63,7 +63,12 @@ export default function CardModal({ data, closeModal }) {
 
         <div className="flex flex-col w-full overflow-auto mt-5">
           {selectedTab == "Sobre" && (
-            <AboutSection description={data.description} />
+            <AboutSection
+              description={data.description}
+              projects={data.projects}
+              languages={data.languages}
+              interests={data.interests}
+            />
           )}
 
           {selectedTab == "Experiência" && (
