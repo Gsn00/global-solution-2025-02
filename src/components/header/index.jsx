@@ -36,7 +36,7 @@ export default function Header({ toggleTheme }) {
         >
           {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
         </button>
-        <button>
+        <button className="cursor-pointer">
           <ProfilePic
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuArwQWNug3-vFi3LdTUK7wzyMlg1xs4mo7B9yEspk11XPJeNYJ-4ze7EW4nYdrZ7-6lpQJwY_kxgXxMSTCv1-fBxqNAIsDXtdqXJN6U8eluZ_XbYOJRYDH069MPFsqpkZ7Bl__DLqzyGJ0lmpIDTpzA6HReYEYmEAv1YQpr7O9BEjMUY4ZQBBdV-J6JLzWxtPwgmOKpT8oeUVtn-OHRxcvAJlX_U44RYeE9a4pynjWaM5zo4Fsq-zLZBAUUjG7AhF-i4rbFXAtY0MFo"
             alt="Profile Picture"

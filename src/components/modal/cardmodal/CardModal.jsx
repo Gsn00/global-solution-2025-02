@@ -1,8 +1,16 @@
 import { X } from "lucide-react";
 import ProfilePic from "../../ProfilePic";
 import InformationButton from "./InformationButton";
+import AboutSection from "./AboutSection";
+import { useState } from "react";
 
 export default function CardModal({ data, closeModal }) {
+  const [selectedTab, setSelectedTab] = useState("Sobre");
+
+  function handleTabClick(tab) {
+    setSelectedTab(tab);
+  }
+
   return (
     <div className="relative w-3/5 h-4/5 bg-bg-light dark:bg-bg-dark border border-blue/20 rounded-lg pt-6 flex flex-col items-center">
       <button
@@ -28,24 +36,36 @@ export default function CardModal({ data, closeModal }) {
 
       <div className="flex flex-col gap-2 items-center border-b border-border-light dark:border-border-dark pb-8 pt-15 px-10 w-full flex-1 overflow-y-hidden">
         <div className="grid grid-cols-4 w-full border-b border-blue/20">
-          <InformationButton selected title="Sobre" />
-          <InformationButton title="Experiência" />
-          <InformationButton title="Habilidades" />
-          <InformationButton title="Contato" />
+          <InformationButton
+            title="Sobre"
+            handleTabClick={handleTabClick}
+            selected={selectedTab === "Sobre"}
+          />
+          <InformationButton
+            title="Experiência"
+            handleTabClick={handleTabClick}
+            selected={selectedTab === "Experiência"}
+          />
+          <InformationButton
+            title="Habilidades"
+            handleTabClick={handleTabClick}
+            selected={selectedTab === "Habilidades"}
+          />
+          <InformationButton
+            title="Contato"
+            handleTabClick={handleTabClick}
+            selected={selectedTab === "Contato"}
+          />
         </div>
 
         <div className="flex flex-col w-full overflow-auto mt-5">
-          <div className="flex flex-col gap-5 w-full h-full">
-            <h2 className="font-bold text-xl text-text-light-primary dark:text-text-dark-primary">
-              Resumo Profissional
-            </h2>
-            <p className="text-text-light-secondary dark:text-text-dark-secondary">
-              Apaixonada por tecnologia e ética, com mais de 8 anos de
-              experiência na criação de sistemas de inteligência artificial
-              responsáveis e transparentes. Busco colaborar em projetos que
-              impactem positivamente a sociedade.
-            </p>
-          </div>
+          {selectedTab == "Sobre" && (
+            <AboutSection
+              text={
+                "Apaixonada por tecnologia e ética, com mais de 8 anos de experiência na criação de sistemas de inteligência artificial responsáveis e transparentes. Busco colaborar em projetos que impactem positivamente a sociedade."
+              }
+            />
+          )}
         </div>
       </div>
 
