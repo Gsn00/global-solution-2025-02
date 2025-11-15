@@ -4,6 +4,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock,
+  Languages,
   TrendingUp,
 } from "lucide-react";
 import Select from "../select";
@@ -59,11 +60,19 @@ export default function UserList({ openModal }) {
           }
           onClick={() => {
             openModal("card", {
+              id: 1,
               name: "Mariana Silva",
+              img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbwrSfeuB5oXoho3H9OX2OAWVo5dlK3zeaYPuwPGM8_Ub9lGELvmArvFsERnpnSrd-E2yTUlfbQ4fq-g2h2vMSJAkKXpLGbXPLUdulqzT7RhKv-Wo2LE61GbcUbShcLEv9EeaxW_vpkXwzUEeVHUIp-wHzW8zs1W8FNIO3Zf4lS0eHJNHLP1MgMDLMldyn3WOPoxgj2Ujv7o_bCe4AXtqsH7F_f4waWV06PTp9zWOex5g7IZ8_9SdryXTfBiEZuiXM55ZemN0qUzPu",
+              role: "Especialista em IA Ética",
               description:
                 "Apaixonada por tecnologia e ética, com mais de 8 anos de experiência na criação de sistemas de inteligência artificial responsáveis e transparentes. Busco colaborar em projetos que impactem positivamente a sociedade.",
-              role: "Especialista em IA Ética",
-              skills: ["Machine Learning", "Ética Digital", "Python"],
+              locale: "São Paulo, Brasil",
+              hardskills: ["Machine Learning", "Ética Digital", "Python"],
+              softskills: [
+                "Comunicação",
+                "Trabalho em Equipe",
+                "Resolução de Problemas",
+              ],
               experiences: [
                 {
                   from: "Jan 2020",
@@ -94,7 +103,29 @@ export default function UserList({ openModal }) {
                   institution: "Universidade Estadual de Campinas (UNICAMP)",
                 },
               ],
-              img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbwrSfeuB5oXoho3H9OX2OAWVo5dlK3zeaYPuwPGM8_Ub9lGELvmArvFsERnpnSrd-E2yTUlfbQ4fq-g2h2vMSJAkKXpLGbXPLUdulqzT7RhKv-Wo2LE61GbcUbShcLEv9EeaxW_vpkXwzUEeVHUIp-wHzW8zs1W8FNIO3Zf4lS0eHJNHLP1MgMDLMldyn3WOPoxgj2Ujv7o_bCe4AXtqsH7F_f4waWV06PTp9zWOex5g7IZ8_9SdryXTfBiEZuiXM55ZemN0qUzPu",
+              projects: [
+                {
+                  name: "Sistema de Recomendação Ética",
+                  link: "https://github.com/marianasilva/sistema-recomendacao-etica",
+                },
+                {
+                  name: "Biblioteca Virtual",
+                  link: "https://github.com/marianasilva/biblioteca-virtual",
+                },
+              ],
+              certifications: [
+                {
+                  name: "Certificação em Machine Learning",
+                },
+                {
+                  name: "Especialista em Ética na IA",
+                },
+              ],
+              languages: [
+                { name: "Português", level: "Nativo" },
+                { name: "Inglês", level: "Fluente" },
+              ],
+              interests: ["Tecnologia", "Ética", "Inovação"],
             });
           }}
         />

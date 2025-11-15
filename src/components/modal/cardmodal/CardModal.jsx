@@ -33,7 +33,7 @@ export default function CardModal({ data, closeModal }) {
         </h1>
         <p className="text-blue text-xl">{data.role}</p>
         <p className="text-text-light-secondary dark:text-text-dark-secondary">
-          São Paulo, Brasil
+          {data.locale}
         </p>
       </div>
 
@@ -71,7 +71,10 @@ export default function CardModal({ data, closeModal }) {
           )}
 
           {selectedTab == "Habilidades" && (
-            <SkillsSection skills={data.skills} />
+            <SkillsSection
+              hardskills={data.hardskills}
+              softskills={data.softskills}
+            />
           )}
 
           {selectedTab == "Formações" && (
