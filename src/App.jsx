@@ -50,11 +50,15 @@ function App() {
               data={modalData}
               closeModal={closeModal}
               openModal={openModal}
+              isModalOpen={isModalOpen}
             />
           )}
 
           {modalType === "recommend" && (
-            <RecommendedModal closeModal={closeModal} />
+            <RecommendedModal
+              closeModal={closeModal}
+              isModalOpen={isModalOpen}
+            />
           )}
         </Modal>
       )}

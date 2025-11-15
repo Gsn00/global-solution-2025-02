@@ -7,7 +7,12 @@ import ExperienceSection from "./ExperienceSection";
 import SkillsSection from "./SkillsSection";
 import FormationsSection from "./FormationsSection";
 
-export default function CardModal({ data, closeModal, openModal }) {
+export default function CardModal({
+  data,
+  closeModal,
+  openModal,
+  isModalOpen,
+}) {
   const [selectedTab, setSelectedTab] = useState("Sobre");
 
   function handleTabClick(tab) {
@@ -15,7 +20,11 @@ export default function CardModal({ data, closeModal, openModal }) {
   }
 
   return (
-    <div className="select-none relative w-full h-full max-w-[1150px] max-h-[735px] bg-bg-light dark:bg-bg-dark border border-blue/20 rounded-lg pt-6 flex flex-col items-center">
+    <div
+      className={`select-none relative w-full h-full max-w-[1150px] max-h-[735px] bg-bg-light dark:bg-bg-dark border border-blue/20 rounded-lg pt-6 flex flex-col items-center ${
+        isModalOpen && "animate-[modalAppear_0.3s_ease-in-out]"
+      }`}
+    >
       <button
         onClick={() => closeModal()}
         className="cursor-pointer text-text-light-secondary dark:text-text-dark-secondary absolute top-3 right-3"

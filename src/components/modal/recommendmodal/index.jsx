@@ -1,8 +1,12 @@
 import { Flame, ThumbsUp, X } from "lucide-react";
 
-export default function RecommendedModal({ closeModal }) {
+export default function RecommendedModal({ closeModal, isModalOpen }) {
   return (
-    <div className="select-none relative w-full h-full max-w-[500px] max-h-[200px] bg-bg-light dark:bg-bg-dark border border-blue/20 rounded-lg flex flex-col items-center">
+    <div
+      className={`select-none relative w-full h-full max-w-[500px] max-h-[200px] bg-bg-light dark:bg-bg-dark border border-blue/20 rounded-lg flex flex-col items-center ${
+        isModalOpen && "animate-[modalAppear_0.3s_ease-in-out]"
+      }`}
+    >
       <button
         onClick={() => closeModal()}
         className="cursor-pointer text-text-light-secondary dark:text-text-dark-secondary absolute top-3 right-3"
