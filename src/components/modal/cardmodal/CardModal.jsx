@@ -63,34 +63,11 @@ export default function CardModal({ data, closeModal }) {
 
         <div className="flex flex-col w-full overflow-auto mt-5">
           {selectedTab == "Sobre" && (
-            <AboutSection
-              text={
-                "Apaixonada por tecnologia e ética, com mais de 8 anos de experiência na criação de sistemas de inteligência artificial responsáveis e transparentes. Busco colaborar em projetos que impactem positivamente a sociedade."
-              }
-            />
+            <AboutSection description={data.description} />
           )}
 
           {selectedTab == "Experiência" && (
-            <ExperienceSection
-              data={[
-                {
-                  from: "Jan 2020",
-                  to: "Presente",
-                  position: "Engenheira de IA",
-                  company: "Microsoft",
-                  description:
-                    "Desenvolvimento de modelos de aprendizado de máquina para otimizar processos empresariais.",
-                },
-                {
-                  from: "Mar 2016",
-                  to: "Dez 2019",
-                  position: "Cientista de Dados",
-                  company: "Data Insights",
-                  description:
-                    "Análise de grandes volumes de dados para identificar tendências e apoiar decisões estratégicas.",
-                },
-              ]}
-            />
+            <ExperienceSection experiences={data.experiences} />
           )}
 
           {selectedTab == "Habilidades" && (

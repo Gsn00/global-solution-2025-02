@@ -1,11 +1,11 @@
-export default function AboutSection({ text }) {
+export default function AboutSection({ description }) {
   return (
     <div className="flex flex-col gap-5 w-full h-full">
       <h2 className="font-bold text-xl text-text-light-primary dark:text-text-dark-primary">
         Sobre
       </h2>
       <p className="text-text-light-secondary dark:text-text-dark-secondary">
-        {text}
+        {description}
       </p>
     </div>
   );

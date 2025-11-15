@@ -60,8 +60,28 @@ export default function UserList({ openModal }) {
           onClick={() => {
             openModal("card", {
               name: "Mariana Silva",
+              description:
+                "Apaixonada por tecnologia e ética, com mais de 8 anos de experiência na criação de sistemas de inteligência artificial responsáveis e transparentes. Busco colaborar em projetos que impactem positivamente a sociedade.",
               role: "Especialista em IA Ética",
               skills: ["Machine Learning", "Ética Digital", "Python"],
+              experiences: [
+                {
+                  from: "Jan 2020",
+                  to: "Presente",
+                  position: "Engenheira de IA",
+                  company: "Microsoft",
+                  description:
+                    "Desenvolvimento de modelos de aprendizado de máquina para otimizar processos empresariais.",
+                },
+                {
+                  from: "Mar 2016",
+                  to: "Dez 2019",
+                  position: "Cientista de Dados",
+                  company: "Data Insights",
+                  description:
+                    "Análise de grandes volumes de dados para identificar tendências e apoiar decisões estratégicas.",
+                },
+              ],
               formations: [
                 {
                   year: "2020",

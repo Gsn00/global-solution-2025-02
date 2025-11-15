@@ -1,11 +1,11 @@
-export default function ExperienceSection({ data }) {
+export default function ExperienceSection({ experiences }) {
   return (
     <div className="flex flex-col w-full h-full">
       <h2 className="font-bold text-xl text-text-light-primary dark:text-text-dark-primary mb-5">
         Experiência Profissional
       </h2>
 
-      {data.map((experience, index) => (
+      {experiences.map((experience, index) => (
         <div key={index} className="flex flex-col gap-1 pl-7 relative pb-5">
           <div className="bg-blue w-4 h-4 rounded-full absolute top-0 left-0 z-10"></div>
           <div className="bg-border-light dark:bg-border-dark w-0.5 h-full absolute top-0 left-[7px]"></div>
