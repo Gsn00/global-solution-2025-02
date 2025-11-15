@@ -9,6 +9,15 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: #d3d4d5;
+}
+
+html.dark {
+  background-color: #0b1317;
+}
+
 @theme {
   --color-bg-light: #f6f7f8;
   --color-bg-dark: #101c22;
@@ -26,4 +35,22 @@
 
   --color-border-light: #e5e7eb;
   --color-border-dark: #283339;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
 }
