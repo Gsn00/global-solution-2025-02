@@ -3,6 +3,7 @@ import ProfilePic from "../../ProfilePic";
 import InformationButton from "./InformationButton";
 import AboutSection from "./AboutSection";
 import { useState } from "react";
+import ExperienceSection from "./ExperienceSection";
 
 export default function CardModal({ data, closeModal }) {
   const [selectedTab, setSelectedTab] = useState("Sobre");
@@ -65,6 +66,37 @@ export default function CardModal({ data, closeModal }) {
                 "Apaixonada por tecnologia e ética, com mais de 8 anos de experiência na criação de sistemas de inteligência artificial responsáveis e transparentes. Busco colaborar em projetos que impactem positivamente a sociedade."
               }
             />
+          )}
+
+          {selectedTab == "Experiência" && (
+            <ExperienceSection
+              data={[
+                {
+                  from: "Jan 2020",
+                  to: "Presente",
+                  position: "Engenheira de IA",
+                  company: "Microsoft",
+                  description:
+                    "Desenvolvimento de modelos de aprendizado de máquina para otimizar processos empresariais.",
+                },
+                {
+                  from: "Mar 2016",
+                  to: "Dez 2019",
+                  position: "Cientista de Dados",
+                  company: "Data Insights",
+                  description:
+                    "Análise de grandes volumes de dados para identificar tendências e apoiar decisões estratégicas.",
+                },
+              ]}
+            />
+          )}
+
+          {selectedTab == "Habilidades" && (
+            <SkillsSection skills={data.skills} />
+          )}
+
+          {selectedTab == "Contato" && (
+            <ContactSection contact={data.contact} />
           )}
         </div>
       </div>
