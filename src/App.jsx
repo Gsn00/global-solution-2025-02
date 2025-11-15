@@ -4,7 +4,8 @@ import Header from "./components/header";
 import RecommendedSkills from "./components/RecommendedSkills";
 import UserList from "./components/userlist";
 import Modal from "./components/modal";
-import CardModal from "./components/modal/cardmodal/CardModal";
+import CardModal from "./components/modal/cardmodal";
+import RecommendedModal from "./components/modal/recommendmodal";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,7 +46,15 @@ function App() {
       {isModalOpen && (
         <Modal closeModal={closeModal}>
           {modalType === "card" && (
-            <CardModal data={modalData} closeModal={closeModal} />
+            <CardModal
+              data={modalData}
+              closeModal={closeModal}
+              openModal={openModal}
+            />
+          )}
+
+          {modalType === "recommend" && (
+            <RecommendedModal closeModal={closeModal} />
           )}
         </Modal>
       )}

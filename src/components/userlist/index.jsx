@@ -1,12 +1,4 @@
-import {
-  Brain,
-  BriefcaseBusiness,
-  ChevronLeft,
-  ChevronRight,
-  Clock,
-  Languages,
-  TrendingUp,
-} from "lucide-react";
+import { Brain, BriefcaseBusiness, Clock, TrendingUp } from "lucide-react";
 import Select from "../select";
 import UserCard from "./UserCard";
 import Pagination from "../pagination";
