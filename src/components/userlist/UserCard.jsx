@@ -1,4 +1,5 @@
 import ProfilePic from "../ProfilePic";
+import SkillSpan from "../skillspan";
 
 export default function UserCard({ img, name, role, skills, onClick }) {
   return (
@@ -16,12 +17,7 @@ export default function UserCard({ img, name, role, skills, onClick }) {
 
       <div className="flex flex-wrap justify-center gap-2">
         {skills.map((skill, index) => (
-          <span
-            key={index}
-            className="bg-blue/15 text-blue border border-blue/15 even:bg-purple/15 even:text-purple even:border-purple/15 rounded-full px-3 py-1 text-sm font-semibold"
-          >
-            {skill}
-          </span>
+          <SkillSpan key={index} skill={skill} />
         ))}
       </div>
     </div>

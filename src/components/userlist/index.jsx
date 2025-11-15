@@ -10,7 +10,7 @@ import Select from "../select";
 import UserCard from "./UserCard";
 import Pagination from "../pagination";
 
-export default function UserList({ openModal, closeModal }) {
+export default function UserList({ openModal }) {
   return (
     <section className="flex flex-col gap-5 px-5">
       <h1 className="font-bold text-5xl text-text-light-primary dark:text-text-dark-primary">
@@ -62,6 +62,18 @@ export default function UserList({ openModal, closeModal }) {
               name: "Mariana Silva",
               role: "Especialista em IA Ética",
               skills: ["Machine Learning", "Ética Digital", "Python"],
+              formations: [
+                {
+                  year: "2020",
+                  degree: "Mestrado em Ciência da Computação",
+                  institution: "Universidade de São Paulo (USP)",
+                },
+                {
+                  year: "2018",
+                  degree: "Bacharelado em Ciência da Computação",
+                  institution: "Universidade Estadual de Campinas (UNICAMP)",
+                },
+              ],
               img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbwrSfeuB5oXoho3H9OX2OAWVo5dlK3zeaYPuwPGM8_Ub9lGELvmArvFsERnpnSrd-E2yTUlfbQ4fq-g2h2vMSJAkKXpLGbXPLUdulqzT7RhKv-Wo2LE61GbcUbShcLEv9EeaxW_vpkXwzUEeVHUIp-wHzW8zs1W8FNIO3Zf4lS0eHJNHLP1MgMDLMldyn3WOPoxgj2Ujv7o_bCe4AXtqsH7F_f4waWV06PTp9zWOex5g7IZ8_9SdryXTfBiEZuiXM55ZemN0qUzPu",
             });
           }}

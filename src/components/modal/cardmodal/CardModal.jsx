@@ -4,6 +4,8 @@ import InformationButton from "./InformationButton";
 import AboutSection from "./AboutSection";
 import { useState } from "react";
 import ExperienceSection from "./ExperienceSection";
+import SkillsSection from "./SkillsSection";
+import FormationsSection from "./FormationsSection";
 
 export default function CardModal({ data, closeModal }) {
   const [selectedTab, setSelectedTab] = useState("Sobre");
@@ -53,9 +55,9 @@ export default function CardModal({ data, closeModal }) {
             selected={selectedTab === "Habilidades"}
           />
           <InformationButton
-            title="Contato"
+            title="Formações"
             handleTabClick={handleTabClick}
-            selected={selectedTab === "Contato"}
+            selected={selectedTab === "Formações"}
           />
         </div>
 
@@ -95,8 +97,8 @@ export default function CardModal({ data, closeModal }) {
             <SkillsSection skills={data.skills} />
           )}
 
-          {selectedTab == "Contato" && (
-            <ContactSection contact={data.contact} />
+          {selectedTab == "Formações" && (
+            <FormationsSection formations={data.formations} />
           )}
         </div>
       </div>
