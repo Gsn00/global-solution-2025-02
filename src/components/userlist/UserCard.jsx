@@ -7,7 +7,7 @@ export default function UserCard({ img, name, role, skills, onClick }) {
       onClick={() => onClick()}
       className="flex flex-col items-center bg-content-light dark:bg-content-dark p-5 rounded-lg shadow-md gap-3 select-none cursor-pointer transform transition-transform! hover:scale-103 duration-100"
     >
-      <ProfilePic src={img} alt={name} className={"max-w-30"} />
+      <ProfilePic src={img} alt={name} className={"max-w-35"} />
       <h2 className="font-bold text-2xl text-text-light-primary dark:text-text-dark-primary">
         {name}
       </h2>
@@ -16,9 +16,13 @@ export default function UserCard({ img, name, role, skills, onClick }) {
       </p>
 
       <div className="flex flex-wrap justify-center gap-2">
-        {skills.map((skill, index) => (
-          <SkillSpan key={index} skill={skill} />
-        ))}
+        {skills.map((skill, index) =>
+          index < 3 ? (
+            <SkillSpan key={index} skill={skill} />
+          ) : (
+            index === 3 && <SkillSpan key={index} skill="..." />
+          )
+        )}
       </div>
     </div>
   );
