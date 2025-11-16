@@ -3,7 +3,7 @@ import ProfilePic from "../../ProfilePic";
 import Message from "./Message";
 import { useEffect, useRef, useState } from "react";
 
-export default function ChatModal({ data, closeModal }) {
+export default function ChatModal({ data, closeModal, isModalOpen }) {
   const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState([]);
 
@@ -26,7 +26,9 @@ export default function ChatModal({ data, closeModal }) {
 
   return (
     <div
-      className={`select-none relative w-full h-full max-w-[900px] max-h-[635px] bg-bg-light dark:bg-bg-dark border border-blue/20 rounded-lg pt-6 flex flex-col items-center `}
+      className={`select-none relative w-full h-full max-w-[900px] max-h-[635px] bg-bg-light dark:bg-bg-dark border border-blue/20 rounded-lg pt-6 flex flex-col items-center ${
+        isModalOpen && "animate-[modalAppear_0.3s_ease-in-out]"
+      }`}
     >
       <button
         onClick={() => closeModal()}
