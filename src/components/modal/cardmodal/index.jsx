@@ -104,7 +104,10 @@ export default function CardModal({
         >
           Recomendar Profissional
         </button>
-        <button className="w-full py-4 bg-blue rounded-md cursor-pointer text-white font-semibold hover:bg-blue/60 transition">
+        <button
+          onClick={() => openModal("chat", data)}
+          className="w-full py-4 bg-blue rounded-md cursor-pointer text-white font-semibold hover:bg-blue/60 transition"
+        >
           Enviar Mensagem
         </button>
       </div>

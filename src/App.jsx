@@ -6,6 +6,7 @@ import UserList from "./components/userlist";
 import Modal from "./components/modal";
 import CardModal from "./components/modal/cardmodal";
 import RecommendedModal from "./components/modal/recommendmodal";
+import ChatModal from "./components/modal/chatmodal";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,6 +57,14 @@ function App() {
 
           {modalType === "recommend" && (
             <RecommendedModal
+              closeModal={closeModal}
+              isModalOpen={isModalOpen}
+            />
+          )}
+
+          {modalType === "chat" && (
+            <ChatModal
+              data={modalData}
               closeModal={closeModal}
               isModalOpen={isModalOpen}
             />
