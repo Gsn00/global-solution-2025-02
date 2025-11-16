@@ -36,7 +36,7 @@ export default function ChatModal({ data, closeModal }) {
       </button>
       <div className="flex flex-col gap-2 items-center border-b border-border-light dark:border-border-dark pb-8 w-full">
         <div className="mx-auto">
-          <ProfilePic size={120} src={data.img} />
+          <ProfilePic src={data.img} className={"max-w-35 max-md:max-w-25"} />
         </div>
 
         <h1 className="font-bold text-4xl text-text-light-primary dark:text-text-dark-primary">
@@ -67,7 +67,7 @@ export default function ChatModal({ data, closeModal }) {
           <div className="p-1 flex flex-col items-center justify-center bg-content-light dark:bg-content-dark text-text-light-primary dark:text-text-dark-primary rounded-tr-full rounded-br-full">
             <button
               onClick={() => handleSendMessage(inputValue)}
-              className="bg-blue text-white w-35 flex items-center justify-center flex-1 rounded-full cursor-pointer hover:bg-blue/60 transition"
+              className="bg-blue text-white w-15 min-[760px]:w-35 flex items-center justify-center flex-1 rounded-full cursor-pointer hover:bg-blue/60 transition"
             >
               <SendHorizontal />
             </button>

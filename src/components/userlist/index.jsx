@@ -1,4 +1,4 @@
-import { Brain, BriefcaseBusiness, Clock, TrendingUp } from "lucide-react";
+import { BriefcaseBusiness, CodeXml, MapPin } from "lucide-react";
 import Select from "../select";
 import UserCard from "./UserCard";
 import Pagination from "../pagination";
@@ -12,37 +12,27 @@ export default function UserList({ openModal }) {
       <p className="text-xl text-text-light-secondary dark:text-text-dark-secondary">
         Encontre os profissionais mais qualificados para os desafios do amanhã.
       </p>
-      <div className="flex gap-5">
-        <Select icon={<Brain size={15} />} placeholder="Habilidade">
-          <option value="react">React</option>
-          <option value="node">Node.js</option>
-          <option value="python">Python</option>
+      <div className="flex flex-wrap gap-5">
+        <Select icon={<BriefcaseBusiness size={15} />} placeholder="Area">
+          <option value="Data Science">Ciência de Dados</option>
+          <option value="Web Development">Desenvolvimento Web</option>
+          <option value="Cybersecurity">Cibersegurança</option>
         </Select>
 
-        <Select icon={<BriefcaseBusiness size={15} />} placeholder="Cargos">
-          <option value="Cientista de Dados">Cientista de Dados</option>
-          <option value="Desenvolvedor">Desenvolvedor</option>
-          <option value="Engenheiro de Software">Engenheiro de Software</option>
+        <Select icon={<MapPin size={15} />} placeholder="Cidade">
+          <option value="São Paulo">São Paulo</option>
+          <option value="Rio de Janeiro">Rio de Janeiro</option>
+          <option value="Belo Horizonte">Belo Horizonte</option>
         </Select>
 
-        <Select icon={<Clock size={15} />} placeholder="Disponibilidade">
-          <option value="full-time">Tempo Integral</option>
-          <option value="part-time">Meio Período</option>
-          <option value="freelance">Freelancer</option>
-        </Select>
-
-        <Select
-          icon={<TrendingUp size={15} />}
-          placeholder="Nível de Experiência"
-        >
-          <option value="trainee">Trainee</option>
-          <option value="junior">Júnior</option>
-          <option value="mid">Pleno</option>
-          <option value="senior">Sênior</option>
+        <Select icon={<CodeXml size={15} />} placeholder="Tecnologia">
+          <option value="Python">Python</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Java">Java</option>
         </Select>
       </div>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 min-[760px]:grid-cols-2 min-[1180px]:grid-cols-4 gap-5">
         <UserCard
           name={"Mariana Silva"}
           role={"Especialista em IA Ética"}

@@ -3,17 +3,9 @@ import HeaderButton from "./HeaderButton";
 import ProfilePic from "../ProfilePic";
 import { useState } from "react";
 
-export default function Header({ toggleTheme }) {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  function handleToggleTheme() {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setIsDarkMode(!isDarkMode);
-    toggleTheme();
-  }
-
+export default function Header({ toggleTheme, isDarkMode }) {
   return (
-    <header className="sticky top-0 left-0 z-10 w-full px-8 py-4 flex items-center justify-between border-b border-solid border-border-light bg-background-light/80 backdrop-blur-sm dark:border-border-dark dark:bg-background-dark/80">
+    <header className="min-[760px]:flex hidden sticky top-0 left-0 z-10 w-full px-8 py-4 items-center justify-between border-b border-solid border-border-light bg-background-light/80 backdrop-blur-sm dark:border-border-dark dark:bg-background-dark/80">
       <div className="flex items-center gap-5">
         <h1 className="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight tracking-[-0.015em] select-none">
           THE FUTURE
@@ -32,7 +24,7 @@ export default function Header({ toggleTheme }) {
 
         <button
           className="cursor-pointer rounded-lg flex items-center justify-center w-9 h-9 text-text-light-primary dark:text-text-dark-primary bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark"
-          onClick={() => handleToggleTheme()}
+          onClick={() => toggleTheme()}
         >
           {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
         </button>
@@ -40,7 +32,7 @@ export default function Header({ toggleTheme }) {
           <ProfilePic
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuArwQWNug3-vFi3LdTUK7wzyMlg1xs4mo7B9yEspk11XPJeNYJ-4ze7EW4nYdrZ7-6lpQJwY_kxgXxMSTCv1-fBxqNAIsDXtdqXJN6U8eluZ_XbYOJRYDH069MPFsqpkZ7Bl__DLqzyGJ0lmpIDTpzA6HReYEYmEAv1YQpr7O9BEjMUY4ZQBBdV-J6JLzWxtPwgmOKpT8oeUVtn-OHRxcvAJlX_U44RYeE9a4pynjWaM5zo4Fsq-zLZBAUUjG7AhF-i4rbFXAtY0MFo"
             alt="Profile Picture"
-            size={32}
+            className={"max-w-10"}
           />
         </button>
       </nav>

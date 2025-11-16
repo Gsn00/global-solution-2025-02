@@ -37,7 +37,7 @@ export default function Select({ children, icon, placeholder }) {
       </button>
 
       {isOpen && (
-        <ul className="absolute z-50 mt-1 min-w-full bg-content-light dark:bg-content-dark text-text-light-primary dark:text-text-dark-primary border border-blue/20 rounded-lg shadow-lg max-h-60 overflow-auto">
+        <ul className="absolute z-50 mt-1 min-w-[180px] bg-content-light dark:bg-content-dark text-text-light-primary dark:text-text-dark-primary border border-blue/20 rounded-lg shadow-lg max-h-60 overflow-auto">
           {children &&
             React.Children.map(children, (child) => (
               <li

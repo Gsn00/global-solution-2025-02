@@ -7,11 +7,20 @@ import Modal from "./components/modal";
 import CardModal from "./components/modal/cardmodal";
 import RecommendedModal from "./components/modal/recommendmodal";
 import ChatModal from "./components/modal/chatmodal";
+import MobileHeader from "./components/mobileheader";
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState("");
   const [modalData, setModalData] = useState(null);
+
+  function handleToggleTheme() {
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setIsDarkMode(!isDarkMode);
+    toggleTheme();
+  }
 
   useEffect(() => {
     if (isModalOpen) {
@@ -72,8 +81,9 @@ function App() {
         </Modal>
       )}
 
-      <Header toggleTheme={toggleTheme} />
-      <section className="px-55 w-full min-h-screen flex flex-col gap-8 py-8">
+      <Header toggleTheme={handleToggleTheme} isDarkMode={isDarkMode} />
+      <MobileHeader toggleTheme={handleToggleTheme} isDarkMode={isDarkMode} />
+      <section className="px-5 md:px-20 w-full max-w-[1600px] mx-auto min-h-screen flex flex-col gap-8 py-8">
         <RecommendedSkills />
         <UserList openModal={openModal} closeModal={closeModal} />
       </section>

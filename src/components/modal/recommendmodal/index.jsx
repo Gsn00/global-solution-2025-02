@@ -20,7 +20,7 @@ export default function RecommendedModal({ closeModal, isModalOpen }) {
           strokeWidth={1}
           className="text-blue animate-[flame_1.2s_ease-in-out_infinite] filter drop-shadow-[0_0_-8px_rgba(0,200,255,0.8)] drop-shadow-[0_0_15px_rgba(0,200,255,0.6)]"
         />
-        <h1 className="text-2xl text-text-light-primary dark:text-text-dark-primary font-semibold">
+        <h1 className="text-xl min-[760px]:text-2xl text-text-light-primary dark:text-text-dark-primary font-semibold">
           Usuário Recomendado!
         </h1>
       </div>

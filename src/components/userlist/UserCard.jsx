@@ -7,7 +7,7 @@ export default function UserCard({ img, name, role, skills, onClick }) {
       onClick={() => onClick()}
       className="flex flex-col items-center bg-content-light dark:bg-content-dark p-5 rounded-lg shadow-md gap-3 select-none cursor-pointer transform transition-transform! hover:scale-103 duration-100"
     >
-      <ProfilePic src={img} alt={name} size={100} />
+      <ProfilePic src={img} alt={name} className={"max-w-30"} />
       <h2 className="font-bold text-2xl text-text-light-primary dark:text-text-dark-primary">
         {name}
       </h2>
