@@ -6,6 +6,7 @@ import FilterCard from "./FilterCard";
 import { useEffect, useMemo, useState } from "react";
 
 export default function UserList({ openModal, userList }) {
+  const [currentPage, setCurrentPage] = useState(1);
   const [areas, setAreas] = useState([
     "Cloud Specialist",
     "Data Scientist",
@@ -181,7 +182,7 @@ export default function UserList({ openModal, userList }) {
       </div>
 
       <div className="grid grid-cols-1 min-[760px]:grid-cols-2 min-[1180px]:grid-cols-4 gap-5">
-        {filteredList.map((user) => (
+        {filteredList.slice(currentPage * 12 - 12, 12 * currentPage ).map((user) => (
           <UserCard
             key={user.id}
             name={user.name}
