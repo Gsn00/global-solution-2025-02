@@ -8,8 +8,14 @@ import CardModal from "./components/modal/cardmodal";
 import RecommendedModal from "./components/modal/recommendmodal";
 import ChatModal from "./components/modal/chatmodal";
 import MobileHeader from "./components/mobileheader";
+import Groq from "groq-sdk";
 
 function App() {
+  const groq = new Groq({
+    apiKey: process.env.REACT_APP_GROQ_API_KEY,
+    dangerouslyAllowBrowser: true,
+  });
+
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -151,6 +157,7 @@ function App() {
               data={modalData}
               closeModal={closeModal}
               isModalOpen={isModalOpen}
+              groq={groq}
             />
           )}
         </Modal>

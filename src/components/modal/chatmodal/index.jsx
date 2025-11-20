@@ -3,7 +3,7 @@ import ProfilePic from "../../ProfilePic";
 import Message from "./Message";
 import { useEffect, useRef, useState } from "react";
 
-export default function ChatModal({ data, closeModal, isModalOpen }) {
+export default function ChatModal({ data, closeModal, isModalOpen, groq }) {
   const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState([]);
 
@@ -13,9 +13,50 @@ export default function ChatModal({ data, closeModal, isModalOpen }) {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  function handleSendMessage(message) {
-    setMessages([...messages, message]);
+  async function handleSendMessage(message) {
+    if (!message.trim()) return;
+
+    const newMessages = [...messages, { role: "user", content: message }];
+    setMessages(newMessages);
     setInputValue("");
+
+    try {
+      const completion = await groq.chat.completions.create({
+        model: "moonshotai/kimi-k2-instruct-0905",
+        messages: [
+          {
+            role: "system",
+            content: `
+Você se chama ${data.name} e é ${data.role}.  
+Responda como uma pessoa real, de forma leve e natural.  
+Se a pergunta for simples, responda de forma simples.  
+Não fale como IA.  
+Evite formalidade e respostas longas.
+Aqui estão informações suas: ${JSON.stringify(data)}
+          `,
+          },
+          ...newMessages,
+        ],
+      });
+
+      const botReply = completion.choices[0].message.content;
+
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: botReply },
+      ]);
+    } catch (err) {
+      console.error(err);
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content:
+            "Ops! Tive um problema para responder agora. Pode tentar de novo?",
+        },
+      ]);
+    }
   }
 
   function handleOnKeyPress(e) {
@@ -51,7 +92,7 @@ export default function ChatModal({ data, closeModal, isModalOpen }) {
       </div>
       <div className="flex flex-col gap-3 items-end mt-5 pl-5 pr-3 w-full flex-1 text-text-light-primary dark:text-text-dark-primary overflow-y-auto mr-5">
         {messages.map((msg, index) => (
-          <Message key={index} content={msg} />
+          <Message key={index} role={msg.role} content={msg.content} />
         ))}
         <div ref={bottomRef} />
       </div>
