@@ -6,12 +6,13 @@ import { useEffect, useRef, useState } from "react";
 export default function ChatModal({ data, closeModal, isModalOpen, groq }) {
   const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState([]);
+  const [writing, setWriting] = useState(false);
 
   const bottomRef = useRef(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, writing]);
 
   async function handleSendMessage(message) {
     if (!message.trim()) return;
@@ -20,6 +21,17 @@ export default function ChatModal({ data, closeModal, isModalOpen, groq }) {
     setMessages(newMessages);
     setInputValue("");
 
+    setTimeout(() => {
+      setWriting(true);
+    }, 2000);
+
+    setTimeout(() => {
+      setWriting(false);
+      fetchResponse(newMessages);
+    }, 4000);
+  }
+
+  async function fetchResponse(newMessages) {
     try {
       const completion = await groq.chat.completions.create({
         model: "moonshotai/kimi-k2-instruct-0905",
@@ -94,6 +106,7 @@ Aqui estão informações suas: ${JSON.stringify(data)}
         {messages.map((msg, index) => (
           <Message key={index} role={msg.role} content={msg.content} />
         ))}
+        {writing && <Message role="assistant" content="Digitando..." />}
         <div ref={bottomRef} />
       </div>
 
