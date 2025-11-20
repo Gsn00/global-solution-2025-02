@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
-export default function Select({ children, icon, placeholder, onChange }) {
+export default function Select({ children, icon, placeholder, addFilter }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -15,10 +15,10 @@ export default function Select({ children, icon, placeholder, onChange }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleSelect = (value, label) => {
+  function handleSelect(type, value) {
     setIsOpen(false);
-    onChange({ target: { value, label } });
-  };
+    addFilter({ type, value });
+  }
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -44,7 +44,7 @@ export default function Select({ children, icon, placeholder, onChange }) {
               <li
                 key={child.props.value}
                 onClick={() =>
-                  handleSelect(child.props.value, child.props.children)
+                  handleSelect(child.props.type, child.props.value)
                 }
                 className="px-5 py-2 cursor-pointer hover:bg-blue/10 rounded-md"
               >

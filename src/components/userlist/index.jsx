@@ -91,13 +91,21 @@ export default function UserList({ openModal, userList }) {
   const [filters, setFilters] = useState([]);
 
   function addFilter(filter) {
-    if (!filters.includes(filter)) {
+    if (
+      !filters.find((f) => f.type === filter.type && f.value === filter.value)
+    ) {
       setFilters([...filters, filter]);
     }
   }
 
   function removeFilter(filter) {
-    setFilters(filters.filter((f) => f !== filter));
+    setFilters(filters.filter((f) => f.value !== filter.value));
+  }
+
+  function getFilteredList() {
+    if (filters.length === 0) {
+      return userList;
+    }
   }
 
   return (
@@ -112,10 +120,10 @@ export default function UserList({ openModal, userList }) {
         <Select
           icon={<BriefcaseBusiness size={15} />}
           placeholder="Area"
-          onChange={(e) => addFilter(e.target.value)}
+          addFilter={addFilter}
         >
           {areas.map((area) => (
-            <option key={area} value={area}>
+            <option key={area} value={area} type="area">
               {area}
             </option>
           ))}
@@ -124,10 +132,10 @@ export default function UserList({ openModal, userList }) {
         <Select
           icon={<MapPin size={15} />}
           placeholder="Estado"
-          onChange={(e) => addFilter(e.target.value)}
+          addFilter={addFilter}
         >
           {states.map((state) => (
-            <option key={state} value={state}>
+            <option key={state} value={state} type="state">
               {state}
             </option>
           ))}
@@ -136,10 +144,10 @@ export default function UserList({ openModal, userList }) {
         <Select
           icon={<CodeXml size={15} />}
           placeholder="Tecnologia"
-          onChange={(e) => addFilter(e.target.value)}
+          addFilter={addFilter}
         >
           {technologies.map((tech) => (
-            <option key={tech} value={tech}>
+            <option key={tech} value={tech} type="technology">
               {tech}
             </option>
           ))}
@@ -154,15 +162,15 @@ export default function UserList({ openModal, userList }) {
         )}
         {filters.map((filter) => (
           <FilterCard
-            key={filter}
-            title={filter}
+            key={filter.value}
+            title={filter.value}
             onRemove={() => removeFilter(filter)}
           />
         ))}
       </div>
 
       <div className="grid grid-cols-1 min-[760px]:grid-cols-2 min-[1180px]:grid-cols-4 gap-5">
-        {userList.map((user) => (
+        {getFilteredList().map((user) => (
           <UserCard
             key={user.id}
             name={user.name}
