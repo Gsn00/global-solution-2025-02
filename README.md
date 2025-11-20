@@ -2,7 +2,7 @@
 
 ## Visão Geral do Projeto
 
-Este projeto é uma **Single Page Application (SPA)** desenvolvida como parte da **Global Solution 2025-02**, com o tema **"O Futuro do Trabalho – Conectando pessoas, competências e propósito por meio da tecnologia"** [1].
+Este projeto é uma **Single Page Application (SPA)** desenvolvida como parte da **Global Solution 2025-02**, com o tema **"O Futuro do Trabalho – Conectando pessoas, competências e propósito por meio da tecnologia"**.
 
 A aplicação simula uma **rede profissional colaborativa**, inspirada em plataformas como o LinkedIn, focada em conectar profissionais de diversas áreas, promover o desenvolvimento de competências e incentivar a troca de experiências.
 
