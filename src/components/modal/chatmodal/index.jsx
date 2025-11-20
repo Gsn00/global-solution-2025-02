@@ -23,12 +23,12 @@ export default function ChatModal({ data, closeModal, isModalOpen, groq }) {
 
     setTimeout(() => {
       setWriting(true);
-    }, 2000);
+    }, 1000);
 
     setTimeout(() => {
       setWriting(false);
       fetchResponse(newMessages);
-    }, 4000);
+    }, 3000);
   }
 
   async function fetchResponse(newMessages) {
