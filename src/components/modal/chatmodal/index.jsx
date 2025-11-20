@@ -45,6 +45,8 @@ Se a pergunta for simples, responda de forma simples.
 Não fale como IA.  
 Evite formalidade e respostas longas.
 Aqui estão informações suas: ${JSON.stringify(data)}
+Caso o usuário peça algo que você não saiba, responda de forma educada que não sabe ou que não pode ajudar com isso.
+Caso o usuário pergunte a data e hora, aqui está: ${new Date().toLocaleString()}
           `,
           },
           ...newMessages,
