@@ -3,19 +3,20 @@ import Select from "../select";
 import UserCard from "./UserCard";
 import Pagination from "../pagination";
 import FilterCard from "./FilterCard";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 export default function UserList({ openModal, userList }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [areas, setAreas] = useState([
+  const usersPerPage = 8;
+  const areas = [
     "Cloud Specialist",
     "Data Scientist",
     "Project Manager",
     "Software Engineer",
     "UX/UI Designer",
-  ]);
+  ];
 
-  const [states, setStates] = useState([
+  const states = [
     "Acre",
     "Alagoas",
     "Amapá",
@@ -43,9 +44,9 @@ export default function UserList({ openModal, userList }) {
     "São Paulo",
     "Sergipe",
     "Tocantins",
-  ]);
+  ];
 
-  const [technologies, setTechnologies] = useState([
+  const technologies = [
     "AWS",
     "Adobe XD",
     "Ansible",
@@ -87,7 +88,7 @@ export default function UserList({ openModal, userList }) {
     "Terraform",
     "Usabilidade",
     "User Research",
-  ]);
+  ];
 
   const [filters, setFilters] = useState([]);
 
@@ -97,10 +98,12 @@ export default function UserList({ openModal, userList }) {
     ) {
       setFilters([...filters, filter]);
     }
+    setCurrentPage(1);
   }
 
   function removeFilter(filter) {
     setFilters(filters.filter((f) => f.value !== filter.value));
+    setCurrentPage(1);
   }
 
   const filteredList = useMemo(() => {
@@ -182,18 +185,27 @@ export default function UserList({ openModal, userList }) {
       </div>
 
       <div className="grid grid-cols-1 min-[760px]:grid-cols-2 min-[1180px]:grid-cols-4 gap-5">
-        {filteredList.slice(currentPage * 12 - 12, 12 * currentPage ).map((user) => (
-          <UserCard
-            key={user.id}
-            name={user.name}
-            role={user.role}
-            skills={user.hardskills}
-            img={user.img}
-            onClick={() => openModal("card", user)}
-          />
-        ))}
+        {filteredList
+          .slice(
+            currentPage * usersPerPage - usersPerPage,
+            usersPerPage * currentPage
+          )
+          .map((user) => (
+            <UserCard
+              key={user.id}
+              name={user.name}
+              role={user.role}
+              skills={user.hardskills}
+              img={user.img}
+              onClick={() => openModal("card", user)}
+            />
+          ))}
       </div>
-      <Pagination />
+      <Pagination
+        totalPages={Math.ceil(filteredList.length / usersPerPage)}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
     </section>
   );
 }
