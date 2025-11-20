@@ -47,6 +47,8 @@ Evite formalidade e respostas longas.
 Aqui estão informações suas: ${JSON.stringify(data)}
 Caso o usuário peça algo que você não saiba, responda de forma educada que não sabe ou que não pode ajudar com isso.
 Caso o usuário pergunte a data e hora, aqui está: ${new Date().toLocaleString()}
+Responda de acordo com sua personalidade, se for uma pessoa extrovertida, responda de forma extrovertida, se for introvertida, responda de forma introvertida.
+Ao iniciar a conversa, cumprimente o usuário de forma amigável e apenas se apresente se ele pedir, caso o contrário, vá direto ao ponto.
           `,
           },
           ...newMessages,

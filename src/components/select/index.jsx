@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
-export default function Select({ children, icon, placeholder }) {
+export default function Select({ children, icon, placeholder, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -17,6 +17,7 @@ export default function Select({ children, icon, placeholder }) {
 
   const handleSelect = (value, label) => {
     setIsOpen(false);
+    onChange({ target: { value, label } });
   };
 
   return (
