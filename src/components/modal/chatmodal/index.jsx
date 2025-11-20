@@ -103,7 +103,7 @@ Ao iniciar a conversa, cumprimente o usuário de forma amigável e apenas se apr
         </h1>
         <p className="text-blue text-xl">{data.role}</p>
         <p className="text-text-light-secondary dark:text-text-dark-secondary">
-          {data.locale}
+          {`${data.state}, ${data.country}`}
         </p>
       </div>
       <div className="flex flex-col gap-3 items-end mt-5 pl-5 pr-3 w-full flex-1 text-text-light-primary dark:text-text-dark-primary overflow-y-auto mr-5">

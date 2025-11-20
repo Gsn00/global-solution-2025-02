@@ -46,7 +46,7 @@ export default function CardModal({
         </h1>
         <p className="text-blue text-xl">{data.role}</p>
         <p className="text-text-light-secondary dark:text-text-dark-secondary">
-          {data.locale}
+          {`${data.state}, ${data.country}`}
         </p>
       </div>
 

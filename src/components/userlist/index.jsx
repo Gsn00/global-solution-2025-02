@@ -3,16 +3,15 @@ import Select from "../select";
 import UserCard from "./UserCard";
 import Pagination from "../pagination";
 import FilterCard from "./FilterCard";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function UserList({ openModal, userList }) {
   const [areas, setAreas] = useState([
-    "Cientista de Dados",
-    "Designer UX/UI",
-    "Engenheira de Software",
-    "Engenheiro de Software",
-    "Especialista em Cloud",
-    "Gerente de Projetos",
+    "Cloud Specialist",
+    "Data Scientist",
+    "Project Manager",
+    "Software Engineer",
+    "UX/UI Designer",
   ]);
 
   const [states, setStates] = useState([
@@ -46,10 +45,9 @@ export default function UserList({ openModal, userList }) {
   ]);
 
   const [technologies, setTechnologies] = useState([
-    "Tecnologia",
+    "AWS",
     "Adobe XD",
     "Ansible",
-    "AWS",
     "Azure",
     "CI/CD",
     "Deep Learning",
@@ -57,17 +55,18 @@ export default function UserList({ openModal, userList }) {
     "DevOps",
     "Docker",
     "Estatística",
+    "Excel",
     "Figma",
     "GCP",
     "Gestão de Riscos",
     "HTML/CSS",
     "Java",
+    "JavaScript",
     "Jira",
     "Kanban",
     "Kubernetes",
     "Liderança de Equipes",
     "Machine Learning",
-    "Matemática Aplicada",
     "Microservices",
     "Miro",
     "Orçamento",
@@ -75,7 +74,8 @@ export default function UserList({ openModal, userList }) {
     "Pandas",
     "Prototipagem",
     "Python",
-    "C#",
+    "R",
+    "React",
     "Redes",
     "SQL",
     "Scrum",
@@ -102,11 +102,22 @@ export default function UserList({ openModal, userList }) {
     setFilters(filters.filter((f) => f.value !== filter.value));
   }
 
-  function getFilteredList() {
-    if (filters.length === 0) {
-      return userList;
-    }
-  }
+  const filteredList = useMemo(() => {
+    if (filters.length === 0) return userList;
+
+    return userList.filter((user) => {
+      return filters.every((filter) => {
+        if (filter.type === "area") {
+          return user.role === filter.value;
+        } else if (filter.type === "state") {
+          return user.state === filter.value;
+        } else if (filter.type === "technology") {
+          return user.hardskills.includes(filter.value);
+        }
+        return true;
+      });
+    });
+  }, [filters, userList]);
 
   return (
     <section className="flex flex-col gap-5 px-5">
@@ -170,7 +181,7 @@ export default function UserList({ openModal, userList }) {
       </div>
 
       <div className="grid grid-cols-1 min-[760px]:grid-cols-2 min-[1180px]:grid-cols-4 gap-5">
-        {getFilteredList().map((user) => (
+        {filteredList.map((user) => (
           <UserCard
             key={user.id}
             name={user.name}
