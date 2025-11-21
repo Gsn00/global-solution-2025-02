@@ -71,6 +71,9 @@ A aplicação está **hospedada e acessível** publicamente, não sendo necessá
 **Link da Aplicação no Vercel:**
 [https://global-solution-2025-02.vercel.app/](https://global-solution-2025-02.vercel.app/)
 
+**Link do repositório no GitHub:**
+[https://github.com/Gsn00/global-solution-2025-02](https://github.com/Gsn00/global-solution-2025-02)
+
 ## Configuração e Instalação (Para Desenvolvimento)
 
 Caso deseje clonar o projeto para fins de desenvolvimento ou análise do código, siga os passos abaixo:
