@@ -36,8 +36,6 @@ O projeto foi desenvolvido pelos seguintes alunos:
 | Gabriel Silva Novais | 566370 |
 | Marcos Vinicius Aquino Prado | 562775 |
 
-## Tecnologias Utilizadas
-
 ## Desafios e Soluções
 
 ### Gerenciamento da Latência da Groq API
@@ -54,7 +52,7 @@ A A simulação de personalidades foi implementada através de um sistema de *pr
 
 Ao clicar em um usuário, o frontend envia o histórico da conversa e o prompt de sistema específico daquele usuário para a Groq API, garantindo que a IA **impersonifique** o perfil selecionado com alta fidelidade.
 
-
+## Tecnologias Utilizadas
 
 | Categoria | Tecnologia | Propósito |
 | :--- | :--- | :--- |
